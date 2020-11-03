@@ -26,7 +26,7 @@
 # Libraries that are used in the project.
 
 import time  # The time library used for pauses, this is not needed but is a nice touch.
-
+import sys # The sys library used for exiting the program.
 
 #  ___              _
 # | _ \__ _ _ _  __| |___ _ __
@@ -43,57 +43,27 @@ def blankLine():
 def blank():
     print()
 
-#  ___      _   _   _
-# / __| ___| |_| |_(_)_ _  __ _ ___
-# \__ \/ -_)  _|  _| | ' \/ _` (_-<
-# |___/\___|\__|\__|_|_||_\__, /__/
-#                         |___/
-
-# A few settings that the player gets to choose before the game starts. These are functions that are called
-# later when the game begins.
-
-mapOn = ""
-
-def settingsMapOn(mapOn):
-    while True:
-        # Question.
-        answer = str(input("[Do you want to have your map enabled?] [Y/N]"))
-
-        # If statements.
-        if answer.lower() == "y":
-            print("[Map toggled on.]")
-            mapOn = True
-            break
-        elif answer.lower() == "n":
-            print("[Map toggle off!]")
-            mapOn = False
-            break
-        else:
-            print("[Invalid choice!]")
-
-# Map type...
-mapType = ""
-
-def settingsMapType(mapType):
-    if mapTrue == True:
-        while True:
-            answer = str(input("[What type of map would you like?] [1. Char] [2. Emoji]"))
-            if answer.lower() == "1" or answer.lower() == "char" or answer.lower() == "character":
-                mapType = "char"
-                print("[Char map selected!]")
-                break
-            elif answer.lower() == "2" or answer.lower() == "emoj" or answer.lower() == "emoji":
-                maptype = "emoj"
-                print("[Emoji map selected!]")
-                break
-            else:
-                print("[Invalid choice!]")
-    else:
-        blank()
-
 # Winning screen.
 def village():
+    print("""
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    """)
     print("[You won!]")
+    answer = str(input("[Want to play again?]"))
+    if answer == "y":
+        start()
+    elif answer == "n":
+        sys.exit()
 
 # Compass for questions (N, W, E, S).
 def compass():
@@ -119,12 +89,24 @@ def lava():
 
 # River tile.
 def river():
+
     time.sleep(1.5)
     print("[You fall into the river and die.]")
 
 # Bridge tile.
 def bridge():
     while True:
+        print('''
+        [Map] [🗺️]
+          ⛰⛰⛰⛰⛰
+        ⛰🏁🟩🟩🟩⛰⛰
+        🌊🟩🟩🌊😬🌊🌊
+        🌊🌊🌊🟩🟩🟩⛰
+        ⛰⛰🟩🟩🟩🌋⛰
+        ⛰🏘️🟩🟩🌋🌋⛰
+          ⛰⛰⛰⛰⛰
+                ''')
+
         time.sleep(1.5)
         print("[You are on the bridge.]")
         blankLine()
@@ -145,6 +127,18 @@ def bridge():
 # Meadow 13 tile.
 def meadow13():
     while True:
+
+        print('''
+        [Map] [🗺️]
+
+          ⛰⛰⛰⛰⛰
+        ⛰🏁🟩🟩🟩⛰⛰
+        🌊🟩🟩🌊🧱🌊🌊
+        🌊🌊🌊🟩🟩🟩⛰
+        ⛰⛰🟩🟩🟩🌋⛰
+        ⛰🏘️🟩😛🌋🌋⛰
+          ⛰⛰⛰⛰⛰
+                ''')
 
         # Direction.
         print("[Meadow 13]")
@@ -173,6 +167,18 @@ def meadow13():
 def meadow12():
     while True:
 
+        print('''
+        [Map] [🗺️]
+
+          ⛰⛰⛰⛰⛰
+        ⛰🏁🟩🟩🟩⛰⛰
+        🌊🟩🟩🌊🧱🌊🌊
+        🌊🌊🌊🟩🟩🟩⛰
+        ⛰⛰🟩🟩🟩🌋⛰
+        ⛰🏘️😝🟩🌋🌋⛰
+          ⛰⛰⛰⛰⛰
+                ''')
+
         # Direction.
         print("[Meadow 12]")
 
@@ -199,6 +205,18 @@ def meadow12():
 # Meadow 11 tile.
 def meadow11():
     while True:
+
+        print('''
+        [Map] [🗺️]
+
+          ⛰⛰⛰⛰⛰
+        ⛰🏁🟩🟩🟩⛰⛰
+        🌊🟩🟩🌊🧱🌊🌊
+        🌊🌊🌊🟩🟩🟩⛰
+        ⛰⛰🟩🟩😰🌋⛰
+        ⛰🏘️🟩🟩🌋🌋⛰
+          ⛰⛰⛰⛰⛰
+                ''')
 
         # Direction.
         print("[Meadow 11]")
@@ -227,6 +245,19 @@ def meadow11():
 def meadow10():
     while True:
 
+        # Map.
+        print('''
+        [Map] [🗺️]
+
+          ⛰⛰⛰⛰⛰
+        ⛰🏁🟩🟩🟩⛰⛰
+        🌊🟩🟩🌊🧱🌊🌊
+        🌊🌊🌊🟩🟩🟩⛰
+        ⛰⛰🟩🙃🟩🌋⛰
+        ⛰🏘️🟩🟩🌋🌋⛰
+          ⛰⛰⛰⛰⛰
+                ''')
+
         # Direction.
         print("[Meadow 10]")
 
@@ -253,6 +284,19 @@ def meadow10():
 # Meadow 9 tile.
 def meadow9():
     while True:
+
+        # Map.
+        print('''
+        [Map] [🗺️]
+
+          ⛰⛰⛰⛰⛰
+        ⛰🏁🟩🟩🟩⛰⛰
+        🌊🟩🟩🌊🧱🌊🌊
+        🌊🌊🌊🟩🟩🟩⛰
+        ⛰⛰😁🟩🟩🌋⛰
+        ⛰🏘️🟩🟩🌋🌋⛰
+          ⛰⛰⛰⛰⛰
+                ''')
 
         # Direction.
         print("[Meadow 9]")
@@ -281,6 +325,19 @@ def meadow9():
 def meadow8():
     while True:
 
+        # Map.
+        print('''
+        [Map] [🗺️]
+
+          ⛰⛰⛰⛰⛰
+        ⛰🏁🟩🟩🟩⛰⛰
+        🌊🟩🟩🌊🧱🌊🌊
+        🌊🌊🌊🟩🟩😓⛰
+        ⛰⛰🟩🟩🟩🌋⛰
+        ⛰🏘️🟩🟩🌋🌋⛰
+          ⛰⛰⛰⛰⛰
+                ''')
+
         # Direction.
         print("[Meadow 8]")
 
@@ -307,6 +364,19 @@ def meadow8():
 # Meadow 7 tile.
 def meadow7():
     while True:
+
+        # Map.
+        print('''
+        [Map] [🗺️]
+
+          ⛰⛰⛰⛰⛰
+        ⛰🏁🟩🟩🟩⛰⛰
+        🌊🟩🟩🌊🧱🌊🌊
+        🌊🌊🌊🟩😎🟩⛰
+        ⛰⛰🟩🟩🟩🌋⛰
+        ⛰🏘️🟩🟩🌋🌋⛰
+          ⛰⛰⛰⛰⛰
+                ''')
 
         # Direction.
         print("[Meadow 7]")
@@ -335,6 +405,19 @@ def meadow7():
 def meadow6():
     while True:
 
+        # Map.
+        print('''
+        [Map] [🗺️]
+
+          ⛰⛰⛰⛰⛰
+        ⛰🏁🟩🟩🟩⛰⛰
+        🌊🟩🟩🌊🧱🌊🌊
+        🌊🌊🌊😯🟩🟩⛰
+        ⛰⛰🟩🟩🟩🌋⛰
+        ⛰🏘️🟩🟩🌋🌋⛰
+          ⛰⛰⛰⛰⛰
+                ''')
+
         # Direction.
         print("[Meadow 6]")
 
@@ -361,6 +444,19 @@ def meadow6():
 # Meadow 5 tile.
 def meadow5():
     while True:
+
+        # Map.
+        print('''
+        [Map] [🗺️]
+
+          ⛰⛰⛰⛰⛰
+        ⛰🏁🟩🟩🟩⛰⛰
+        🌊🟩😟🌊🧱🌊🌊
+        🌊🌊🌊🟩🟩🟩⛰
+        ⛰⛰🟩🟩🟩🌋⛰
+        ⛰🏘️🟩🟩🌋🌋⛰
+          ⛰⛰⛰⛰⛰
+                ''')
 
         # Direction.
         print("[Meadow 5]")
@@ -389,6 +485,19 @@ def meadow5():
 def meadow4():
     while True:
 
+        # Map.
+        print('''
+        [Map] [🗺️]
+
+          ⛰⛰⛰⛰⛰
+        ⛰🏁🟩🟩🟩⛰⛰
+        🌊😟🟩🌊🧱🌊🌊
+        🌊🌊🌊🟩🟩🟩⛰
+        ⛰⛰🟩🟩🟩🌋⛰
+        ⛰🏘️🟩🟩🌋🌋⛰
+          ⛰⛰⛰⛰⛰
+                ''')
+
         # Direction.
         print("[Meadow 4]")
 
@@ -414,6 +523,20 @@ def meadow4():
 
 # Meadow 3 tile.
 def meadow3():
+
+    # Map.
+    print('''
+    [Map] [🗺️]
+
+      ⛰⛰⛰⛰⛰
+    ⛰🏁🟩🟩🤨⛰⛰
+    🌊🟩🟩🌊🧱🌊🌊
+    🌊🌊🌊🟩🟩🟩⛰
+    ⛰⛰🟩🟩🟩🌋⛰
+    ⛰🏘️🟩🟩🌋🌋⛰
+      ⛰⛰⛰⛰⛰
+            ''')
+
     # Direction.
     print("[Meadow 3]")
 
@@ -441,6 +564,19 @@ def meadow3():
 def meadow2():
     while True:
 
+        # Map.
+        print('''
+        [Map] [🗺️]
+
+          ⛰⛰⛰⛰⛰
+        ⛰🏁🟩😃🟩⛰⛰
+        🌊🟩🟩🌊🧱🌊🌊
+        🌊🌊🌊🟩🟩🟩⛰
+        ⛰⛰🟩🟩🟩🌋⛰
+        ⛰🏘️🟩🟩🌋🌋⛰
+          ⛰⛰⛰⛰⛰
+                ''')
+
         # Direction.
         print("[Meadow 2]")
         blankLine()
@@ -465,51 +601,45 @@ def meadow2():
 
 # Meadow 1 tile.
 def meadow1():
-    while True:
 
-        # Direction.
-        print("[Meadow 1]")
-        blankLine()
-        print("[In which direction do you want to go?]")
-        blankLine()
-        compass()
-        direction = str(input(""))
-        blankLine()
+    # Map.
+    print('''
+    [Map] [🗺️]
 
-        # Movement.
-        if direction.lower() == "n" or direction.lower() == "north":
-            mountain()
-        elif direction.lower() == "w" or direction.lower() == "west":
-            break
-        elif direction.lower() == "e" or direction.lower() == "east":
-            meadow2()
-        elif direction.lower() == "s" or direction.lower() == "south":
-            meadow5()
-        else:
-            print("Invalid choice!]")
-            blankLine()
+      ⛰⛰⛰⛰⛰
+    ⛰🏁😃🟩🟩⛰⛰
+    🌊🟩🟩🌊🧱🌊🌊
+    🌊🌊🌊🟩🟩🟩⛰
+    ⛰⛰🟩🟩🟩🌋⛰
+    ⛰🏘️🟩🟩🌋🌋⛰
+      ⛰⛰⛰⛰⛰
+        ''')
+
+    # Direction.
+    print("[Meadow 1]")
+    blankLine()
+    print("[In which direction do you want to go?]")
+    blankLine()
+    compass()
+    direction = str(input(""))
+    blankLine()
+
+    # Movement.
+    if direction.lower() == "n" or direction.lower() == "north":
+        mountain()
+    elif direction.lower() == "w" or direction.lower() == "west":
+        start()
+    elif direction.lower() == "e" or direction.lower() == "east":
+        meadow2()
+    elif direction.lower() == "s" or direction.lower() == "south":
+        meadow5()
+    else:
+        print("Invalid choice!]")
+        blankLine()
 
 # Starting tile.
 def start():
     while True:
-
-        if mapType.lower() == "1" or mapType.lower() == "char" or mapType.lower() == "character":
-            print("""
-            [Map] [*=You]
-
-            [ ][M][M][M][M][M][ ]
-            [M][*][1][2][3][M][M]
-            [M][4][5][=][|][=][=]
-            [=][=][=][6][7][8][M]
-            [M][M][9][10][11][L][M]
-            [M][V][12][13][L][L][M]
-            [ ][M][M][M][M][M][ ]
-            """)
-        elif mapType.lower() == "2" or mapType.lower() == "emoj" or mapType.lower() == "emoji":
-            print("""
-            """)
-        elif mapType.lower() == "3" or mapType.lower() == "non" or mapType.lower() == "none":
-            print()
 
         # Direction.
         print("[In which direction do you want to go?]")
@@ -531,17 +661,6 @@ def start():
             blankLine()
             start()
 
-# print('''
-#     [MAP]
-#      ⛰️⛰️⛰️⛰️⛰️⛰️
-#   ⛰️⛰️🟩🟩😀🟩⛰️⛰️
-#   ⛰️🟩🟩🌊 🌊🌫️🌊🌊🌊
-#   🌊 🌊 🌊 🟩🟩🟩 ️️⛰️
-#  ⛰️
-#   ⛰️
-#      ️⛰️⛰️⛰️⛰️⛰️⛰️
-# ''')
-
 #   ___
 #  / __|__ _ _ __  ___
 # | (_ / _` | '  \/ -_)
@@ -551,7 +670,7 @@ def start():
 
 print("""
   _____ _         __   ___ _ _
- |_   _| |_  ___  \ \ / (_) | |__ _ __ _ ___   v1.0
+ |_   _| |_  ___  \ \ / (_) | |__ _ __ _ ___   v1.1
    | | | ' \/ -_)  \ V /| | | / _` / _` / -_)
    |_| |_||_\___|   \_/ |_|_|_\__,_\__, \___|
                                    |___/
@@ -560,12 +679,6 @@ By Noice.
 """)
 
 time.sleep(1)
-
-# Map on?
-settingsMapOn(mapOn)
-
-# Map type?
-settingsMapType(mapType)
 
 # Starts the game.
 start()
